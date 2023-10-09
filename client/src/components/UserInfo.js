@@ -2,86 +2,56 @@ import React from 'react';
 
 import { CheckRole } from '.';
 
-import { Container, FloatingLabel, Form, Row, Col } from 'react-bootstrap';
+import { 
+  Box,
+  Container, 
+  FormLabel,
+  TextField,
+} from '@mui/material';
 
 export function UserInfo() {
   return (
     <Container fluid>
-      <Form>
-        <Form.Group
-          className='mb-3'
-          controlId='formFirstName'
-        >
-          <FloatingLabel
-            controlId='floatingInput'
-            label='First Name'
-            className='mb-3'
-          >
-            <Form.Control
-              type='username'
-              placeholder='First Name'
-            />
-          </FloatingLabel>
-        </Form.Group>
-
-        <Form.Group
-          className='mb-3'
-          controlId='formLastName'
-        >
-            <FloatingLabel
-            controlId='floatingInput'
-            label='Last Name'
-            className='mb-3'
-          >
-          <Form.Control
-            type='username'
-            placeholder='Last Name'
-          />
-          </FloatingLabel>
-        </Form.Group>
-
-        <Form.Group
-          className='mb-3'
-          controlId='formEmail'
-        >
-          <FloatingLabel
-            controlId='floatingInput'
-            label='Email'
-            className='mb-3'
-          >
-          <Form.Control
-            type='username'
-            placeholder='Email'
-          />
-          </FloatingLabel>
-          <Form.Text className='text-muted'>
-            We will never share your email without your permission.
-          </Form.Text>
-        </Form.Group>
-
-        <Form.Group
-          className='mb-3'
-          controlId='formPassword'
-        >
-          <FloatingLabel
-            controlId='floatingInput'
-            label='Password'
-            className='mb-3'
-          >
-          <Form.Control
-            type='username'
-            placeholder='Password'
-          />
-          </FloatingLabel>
-          <Form.Text className='text-muted'>
-            Passwords must be at least 8 characters and contain: lowercase,
-            uppercase, number, special character.
-          </Form.Text>
-        </Form.Group>
-        <p>What is your primary dance role?</p>
+      <Box
+        component='form'
+        sx={{
+          '& .MuiTextField-root': { m: 1, width: '25ch' },
+        }}
+        noValidate
+        autoComplete="off"
+      >
+        <TextField
+          required
+          id="outlined-required"
+          label="First Name"
+          defaultValue=""
+        />
+        <TextField
+          required
+          id="outlined-required"
+          label="Last Name"
+          defaultValue=""
+        />
+        <TextField
+          required
+          id="outlined-required"
+          label="Email address"
+          defaultValue=""
+          helperText="I will never share your email without your permission."
+        />
+        <TextField
+          required
+          id="outlined-required"
+          label="Password"
+          defaultValue=""
+          helperText="Passwords must be at least 8 characters and contain: lowercase,
+          uppercase, number, special character."
+        />
+        <FormLabel>What is your primary dance role?</FormLabel>
         <CheckRole/>
-
-      </Form>
+      </Box>
+     
+       
     </Container>
   );
 };

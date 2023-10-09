@@ -1,34 +1,19 @@
 import React from 'react';
 import { CheckClassLevel, CheckRole } from '.';
 
-import { Container, FloatingLabel, Form } from 'react-bootstrap';
+import { Container, FormControl, FormLabel } from '@mui/material';
 
 export function StudentInfo() {
   return (
     <Container fluid>
-      <Form>
-        <h2>Which level are you registering for?</h2>
-        <CheckClassLevel/>
-
-        <Form.Group
-          className='mb-3'
-          controlId='formPrimaryRole'
-        >
-          <FloatingLabel
-            controlId='floatingInput'
-            label='Primary Role'
-            className='mb-3'
-          >
-            <Form.Control
-              type='username'
-              placeholder='Primary Role'
-            />
-          </FloatingLabel>
-          <Form.Text className='text-muted'>
-            This is the name your character will use in game.
-          </Form.Text>
-        </Form.Group>
-      </Form>
+      <FormControl>
+        <FormLabel id='role-check'>
+          Which level are you registering for?
+        </FormLabel>
+        <CheckClassLevel />
+        <FormLabel id='role-check'>Which role will you be dancing?</FormLabel>
+        <CheckRole />
+      </FormControl>
     </Container>
   );
 }
