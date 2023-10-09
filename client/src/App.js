@@ -9,23 +9,19 @@ import {
   createHttpLink,
 } from '@apollo/client';
 
-import {Navbar} from './components/Navbar.js';
+import {Navbar} from './components';
 
-import './style/App.css';
+import './styles/App.css';
 
-import { UserInfo } from './components'
+import { Container } from '@mui/material';
 
-import { Container } from 'react-bootstrap';
 
  function App() {
   return (
     <div>
-    <ApolloProvider client={client}>
-          <Router>
-            <Navbar />
-            <Routes></Routes>
-          </Router>
-    </ApolloProvider>
+    <Container>
+      <Navbar/>
+    </Container>
   </div>
   );
 }
